@@ -85,7 +85,6 @@ class API_Star_Wars(API_consumer):
 
         except Exception as error:
             print(f"Ocorreu um erro na requisição: {error}")
-        pass
 
 
 class API_Ice_and_Fire(API_consumer):
@@ -98,5 +97,17 @@ class API_Ice_and_Fire(API_consumer):
         return self.__URL
 
     def extract(self, id):
-        # Atividade 5, que resultará o quarto commit
-        pass
+        URL = self.URL + str(id)
+
+        try:
+            request = requests.get(URL)
+            response = request.json()
+
+            IaF_data = (
+                response.get("name"),
+                response.get("tvSeries")
+            )
+            return IaF_data
+
+        except Exception as error:
+            print(f"Ocorreu um erro na requisição: {error}")
