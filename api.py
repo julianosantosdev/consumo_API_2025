@@ -60,7 +60,31 @@ class API_Star_Wars(API_consumer):
         return self.__URL
 
     def extract(self, id):
-    # Atividade 4, que resultará o terceiro commit
+        URL = self.URL + str(id)
+
+        try:
+            request = requests.get(URL)
+            response = request.json()
+
+            '''
+            Para listar o nome dos filmes
+                films = response.get("films")
+                filmList = []
+
+            for film in films:
+                filmRequest = requests.get(film).json()
+                filmList.append(filmRequest.get("title"))
+            '''
+
+            SW_data = (
+                response.get("name"),
+                response.get("films")
+                # filmsNamesList
+            )
+            return SW_data
+
+        except Exception as error:
+            print(f"Ocorreu um erro na requisição: {error}")
         pass
 
 
