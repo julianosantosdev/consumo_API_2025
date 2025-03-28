@@ -67,14 +67,14 @@ class API_Star_Wars(API_consumer):
             response = request.json()
 
             '''
-            Para listar o nome dos filmes
-                films = response.get("films")
-                filmList = []
+                Para listar o nome dos filmes
+                    films = response.get("films")
+                    filmsNamesList = []
 
-            for film in films:
-                filmRequest = requests.get(film).json()
-                filmList.append(filmRequest.get("title"))
-            '''
+                for film in films:
+                    filmRequest = requests.get(film).json()
+                    filmList.append(filmRequest.get("title"))
+                '''
 
             SW_data = (
                 response.get("name"),
