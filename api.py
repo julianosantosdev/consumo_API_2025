@@ -28,20 +28,33 @@ class API_Pokemon(API_consumer):
 class API_Rick_Morty(API_consumer):
     def __init__(self):
         self.__URL = 'https://rickandmortyapi.com/api/character/'
-    
+
     @property
     def URL(self):
         return self.__URL
 
     def extract(self, id):
-    # Atividade 3, que resultará o segundo commit
-        pass
+        URL = self.URL + str(id)
+
+        try:
+            request = requests.get(URL)
+            response = request.json()
+            data = (
+                response.get("id"),
+                response.get("name"),
+                response.get("species")
+            )
+            return data
+
+        except Exception as error:
+            print(f"Ocorreu um erro na requisição: {error}")
+
 
 class API_Star_Wars(API_consumer):
     ''' The universe of Star Wars '''
     def __init__(self):
         self.__URL = 'https://swapi.dev/api/people/'
-    
+
     @property
     def URL(self):
         return self.__URL
@@ -50,11 +63,12 @@ class API_Star_Wars(API_consumer):
     # Atividade 4, que resultará o terceiro commit
         pass
 
+
 class API_Ice_and_Fire(API_consumer):
     ''' The universe of Ice And Fire '''
     def __init__(self):
         self.__URL = 'https://anapioficeandfire.com/api/characters/'
-    
+
     @property
     def URL(self):
         return self.__URL
@@ -62,4 +76,3 @@ class API_Ice_and_Fire(API_consumer):
     def extract(self, id):
         # Atividade 5, que resultará o quarto commit
         pass
- 
