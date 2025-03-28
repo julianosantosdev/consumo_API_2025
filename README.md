@@ -28,7 +28,7 @@ Para executar o projeto execute os seguintes passos:
 
 <br>
 
-6. Caso tenha descomentados as linhas 70-75, 80 e comentado a 79, o resultado da seção Star Wars deve conter o nome dos filmes em que cada personagem esteve presente:
+6. Caso tenha descomentados as linhas 70-75 e 80 e comentado a 79 (arquivo api.py), o resultado da seção Star Wars deve conter o nome dos filmes em que cada personagem esteve presente:
 ![image](https://github.com/user-attachments/assets/932bcd93-e7f4-43c2-8f54-3901fe3eb212)
 
 
